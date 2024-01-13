@@ -13,12 +13,6 @@ extends CharacterBody3D
 
 @export var initial_facing_direction : Vector3 = Vector3.ZERO
 
-@export_group("Nodes")
-@export var HEAD : Node3D
-@export var CAMERA : Camera3D
-@export var CAMERA_ANIMATION : AnimationPlayer
-@export var COLLISION_MESH : CollisionShape3D
-
 @export_group("Controls")
 # We are using UI controls because they are built into Godot Engine so they can be used right away
 @export var JUMP : String = "ui_accept"
@@ -29,6 +23,12 @@ extends CharacterBody3D
 @export var PAUSE : String = "ui_cancel"
 @export var CROUCH : String
 @export var SPRINT : String
+
+@export_group("Nodes")
+@export var HEAD : Node3D
+@export var CAMERA : Camera3D
+@export var CAMERA_ANIMATION : AnimationPlayer
+@export var COLLISION_MESH : CollisionShape3D
 
 # Uncomment if you want full controller support
 #@export var LOOK_LEFT : String
