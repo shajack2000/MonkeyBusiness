@@ -49,6 +49,14 @@ extends CharacterBody3D
 @export var continuous_jumping : bool = true
 @export var view_bobbing : bool = true
 
+@onready var hand := $Head/Hand
+@onready var raycast := $Head/LookAtDetector
+@onready var reticle := $UserInterface/Reticle_1
+var is_holding := false
+var what_holding : Object
+signal sees_grabbable
+signal sees_interactive
+
 # Member variables
 var speed : float = base_speed
 # States: normal, crouching, sprinting
@@ -241,12 +249,65 @@ func _process(delta):
 	
 	HEAD.rotation.x = clamp(HEAD.rotation.x, deg_to_rad(-90), deg_to_rad(90))
 	
+	if Input.is_action_just_pressed("interact"):
+		interact()
+	
+	if raycast.is_colliding():
+		var what : Object = raycast.get_collider()
+		if what.is_in_group("grabbable"):
+			reticle.dot_size = 5
+			reticle.line_length = 10
+			reticle.line_distance = 10
+		else:
+			reset_reticle()
+	else:
+		reset_reticle()
+	
 	# Uncomment if you want full controller support
 	#var controller_view_rotation = Input.get_vector(LOOK_LEFT, LOOK_RIGHT, LOOK_UP, LOOK_DOWN)
 	#HEAD.rotation_degrees.y -= controller_view_rotation.x * 1.5
 	#HEAD.rotation_degrees.x -= controller_view_rotation.y * 1.5
 
+func interact():
+	if !is_holding:
+		grab()
+	else:
+		drop()
 
+func grab():
+	var what = raycast.get_collider()
+	
+	if what and what.is_in_group("grabbable") and !is_holding:
+		for child in what.get_children():
+			if child is CollisionShape3D:
+				child.disabled = true
+		
+		hand.remote_path = what.get_path()
+		is_holding = true
+		what_holding = what
+	else:
+		pass
+	
+func drop():
+	is_holding = false
+	for child in what_holding.get_children():
+		if child is CollisionShape3D:
+			child.disabled = false
+	
+	hand.remote_path = ""
+	what_holding = null
+	
+func tap():
+	pass
+
+func use():
+	pass
+
+func reset_reticle(): 
+	reticle.dot_size = 1
+	reticle.line_length = 10
+	reticle.line_distance = 5
+	
 func _unhandled_input(event):
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		HEAD.rotation_degrees.y -= event.relative.x * mouse_sensitivity

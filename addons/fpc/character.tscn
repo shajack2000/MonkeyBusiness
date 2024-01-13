@@ -103,6 +103,7 @@ MarginContainer/constants/margin_right = 10
 MarginContainer/constants/margin_top = 10
 
 [node name="Character" type="CharacterBody3D" node_paths=PackedStringArray("HEAD", "CAMERA", "CAMERA_ANIMATION", "COLLISION_MESH")]
+collision_layer = 2
 script = ExtResource("1_0t4e8")
 CROUCH = "crouch"
 SPRINT = "sprint"
@@ -122,13 +123,23 @@ shape = SubResource("CapsuleShape3D_uy03j")
 [node name="Head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
+[node name="LookAtDetector" type="RayCast3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+exclude_parent = false
+target_position = Vector3(0, -2, 0)
+collision_mask = 512
+
 [node name="Camera" type="Camera3D" parent="Head"]
 
 [node name="camera_animation" type="AnimationPlayer" parent="Head"]
 libraries = {
 "": SubResource("AnimationLibrary_o0unb")
 }
-blend_times = [&"headbob", &"RESET", 0.5, &"RESET", &"headbob", 0.5, &"RESET", &"RESET", 0.5]
+blend_times = [&"RESET", &"RESET", 0.5, &"RESET", &"headbob", 0.5, &"headbob", &"RESET", 0.5]
+
+[node name="Hand" type="RemoteTransform3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.718, -0.375, -0.59)
+update_scale = false
 
 [node name="UserInterface" type="Control" parent="."]
 layout_mode = 3
@@ -143,6 +154,7 @@ mouse_filter = 1
 layout_mode = 1
 reticle_lines = [NodePath("top"), NodePath("left"), NodePath("right"), NodePath("bottom")]
 character = NodePath("../..")
+cap_mode = 1
 
 [node name="DebugPanel" type="PanelContainer" parent="UserInterface"]
 visible = false
