@@ -602,11 +602,15 @@ _data = {
 "BARNEY-X_Template_Biped1_skeleton|mixamo_com|Layer0": SubResource("Animation_l4jqe")
 }
 
-[node name="Guard" type="CharacterBody3D"]
+[node name="Guard" type="CharacterBody3D" node_paths=PackedStringArray("HEAD", "CAMERA", "CAMERA_ANIMATION", "COLLISION_MESH")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.29301, 0.29323, 5.55086)
 script = ExtResource("2_4477i")
 CROUCH = "crouch"
 SPRINT = "sprint"
+HEAD = NodePath("Head")
+CAMERA = NodePath("Head/Camera")
+CAMERA_ANIMATION = NodePath("Head/camera_animation")
+COLLISION_MESH = NodePath("Collision")
 
 [node name="Collision" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0110817, 1.7472, 0.015686)
@@ -618,7 +622,7 @@ mesh = SubResource("ArrayMesh_l4kkg")
 skeleton = NodePath("")
 
 [node name="Head" type="Node3D" parent="."]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 2.50259, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.50259, 0)
 
 [node name="Camera" type="Camera3D" parent="Head"]
 
@@ -638,11 +642,11 @@ grow_vertical = 2
 mouse_filter = 1
 
 [node name="Reticle_1" parent="UserInterface" node_paths=PackedStringArray("reticle_lines") instance=ExtResource("2_cgnav")]
+visible = false
 layout_mode = 1
 reticle_lines = [null, null, null, null]
 
 [node name="DebugPanel" type="PanelContainer" parent="UserInterface"]
-visible = false
 layout_mode = 0
 offset_left = 10.0
 offset_top = 10.0
@@ -665,10 +669,10 @@ target_position = Vector3(0, 1, 0)
 transform = Transform3D(-0.00727162, 0.0141598, 0.0192775, -0.00137972, 0.0198668, -0.0151131, -0.0238793, -0.00545978, -0.00499709, 1.26254, 1.245, -2.77837)
 
 [node name="Camera_001" type="Node3D" parent="."]
-transform = Transform3D(0.017148, 0.016289, 0.00810034, 2.98023e-09, 0.0111318, -0.0223849, -0.0181919, 0.0153543, 0.00763552, 1.34461, 1.22136, -2.58009)
+transform = Transform3D(0.017148, 0.016289, 0.00810034, 2.98023e-09, 0.0111318, -0.0223849, -0.0181919, 0.0153543, 0.00763551, 1.34461, 1.22136, -2.58009)
 
 [node name="BARNEY-X_Template_Biped1_skeleton" type="Node3D" parent="."]
-transform = Transform3D(0.025, 0, 0, 0, 0.025, 0, 0, 0, 0.025, 0, 1, 0)
+transform = Transform3D(-0.025, 0, -2.18557e-09, 0, 0.025, 0, 2.18557e-09, 0, -0.025, 0, 1, 0)
 
 [node name="Skeleton3D" type="Skeleton3D" parent="BARNEY-X_Template_Biped1_skeleton"]
 bones/0/name = "Bip01"
