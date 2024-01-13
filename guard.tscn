@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1phi1g3fsecx"]
+
+[ext_resource type="PackedScene" uid="uid://mb72a3k03xk7" path="res://barney half one.glb" id="1_ba7e1"]
+[ext_resource type="Script" path="res://guard.gd" id="2_4477i"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_efxos"]
+
+[node name="guard" instance=ExtResource("1_ba7e1")]
+transform = Transform3D(0.025, 0, 0, 0, 0.025, 0, 0, 0, 0.025, 0, 0, 0)
+script = ExtResource("2_4477i")
+CROUCH = "crouch"
+SPRINT = "sprint"
+
+[node name="Skeleton3D" parent="BARNEY-X_Template_Biped1_skeleton" index="0"]
+bones/0/rotation = Quaternion(-0.518247, -0.47278, -0.501676, 0.506182)
+bones/2/rotation = Quaternion(0.17821, 0.980722, 0.0646494, -0.0474034)
+bones/3/rotation = Quaternion(0.00969768, 0.00309034, -0.62117, 0.78361)
+bones/4/rotation = Quaternion(-0.00149013, 0.999972, 0.0041433, 0.00604061)
+bones/6/rotation = Quaternion(0.146595, 0.985478, -0.0767834, -0.0380382)
+bones/7/rotation = Quaternion(-0.0658801, 0.007623, -0.304937, 0.950061)
+bones/8/rotation = Quaternion(-0.00160883, 0.99916, 0.00518712, 0.0406139)
+bones/11/rotation = Quaternion(0.00378986, 0.0110601, 0.00277973, 0.999928)
+bones/12/rotation = Quaternion(0.0108481, 0.00599601, 0.125, 0.992079)
+bones/13/rotation = Quaternion(0.623323, 0.0359773, 0.761454, 0.174248)
+bones/14/rotation = Quaternion(-0.0793461, 0.432315, 0.0409497, 0.897291)
+bones/15/rotation = Quaternion(0.151659, 0.0869633, -0.272436, 0.946158)
+bones/16/rotation = Quaternion(-0.595411, -0.107195, -0.0356575, 0.795439)
+bones/21/rotation = Quaternion(0.0926657, 0.0752257, 0.379224, 0.917575)
+bones/29/rotation = Quaternion(-0.614812, 0.0084392, 0.777873, 0.129799)
+bones/30/rotation = Quaternion(0.0728492, -0.457507, 0.162867, 0.871122)
+bones/32/rotation = Quaternion(0.559515, 0.114558, 0.0341118, 0.820156)
+bones/33/rotation = Quaternion(-0.619628, -0.177526, -0.12398, 0.754436)
+bones/37/rotation = Quaternion(-0.0618424, -0.0378575, 0.358237, 0.930811)
+bones/47/rotation = Quaternion(-0.029316, 0.0115878, -0.0184164, 0.999333)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 36.3457, 0)
+shape = SubResource("BoxShape3D_efxos")
