@@ -1,7 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://uvj7jc7873do"]
+[gd_scene load_steps=9 format=3 uid="uid://uvj7jc7873do"]
 
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="1_e18vq"]
-[ext_resource type="PackedScene" uid="uid://dexnbag2fu3n2" path="res://addons/kaykit_prototype_bits/Assets/gltf/Barrel_A.gltf" id="2_g01is"]
 
 [sub_resource type="Gradient" id="Gradient_ur0vy"]
 colors = PackedColorArray(0, 0.476245, 0.0193456, 1, 0.360494, 0.612721, 0.119744, 1)
@@ -31,9 +30,6 @@ sky = SubResource("Sky_2iust")
 tonemap_mode = 1
 ssao_enabled = true
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_ry0it"]
-height = 1.01194
-
 [node name="test_world" type="Node3D"]
 
 [node name="Character" parent="." instance=ExtResource("1_e18vq")]
@@ -51,12 +47,3 @@ environment = SubResource("Environment_20rw3")
 transform = Transform3D(0.87959, -0.436605, 0.188936, 0, 0.397148, 0.917755, -0.475732, -0.807248, 0.349328, 0, 0, 0)
 light_energy = 4.0
 shadow_enabled = true
-
-[node name="Barrel_A2" parent="." instance=ExtResource("2_g01is")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.51793, 1.03943, 11.5557)
-
-[node name="RigidBody3D" type="RigidBody3D" parent="Barrel_A2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00359845, 0.0140893, 0.00335503)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Barrel_A2/RigidBody3D"]
-shape = SubResource("CylinderShape3D_ry0it")
