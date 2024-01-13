@@ -118,6 +118,12 @@ func handle_jumping():
 func handle_movement(delta, input_dir):
 	var direction = input_dir.rotated(-HEAD.rotation.y)
 	direction = Vector3(direction.x, 0, direction.y)
+	
+	for collision_idx in get_slide_collision_count():
+		var collision_obj := get_slide_collision(collision_idx)
+		if collision_obj.get_collider() is RigidBody3D:
+			collision_obj.get_collider().apply_impulse(-collision_obj.get_normal() * 100 * delta, collision_obj.get_position() - collision_obj.get_collider().global_position)
+
 	move_and_slide()
 	
 	if in_air_momentum:

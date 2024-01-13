@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://uvj7jc7873do"]
+[gd_scene load_steps=10 format=3 uid="uid://uvj7jc7873do"]
 
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="1_e18vq"]
+[ext_resource type="PackedScene" uid="uid://dr2epoxgadyvs" path="res://barrel.tscn" id="2_wrj60"]
 
 [sub_resource type="Gradient" id="Gradient_ur0vy"]
 colors = PackedColorArray(0, 0.476245, 0.0193456, 1, 0.360494, 0.612721, 0.119744, 1)
@@ -47,3 +48,6 @@ environment = SubResource("Environment_20rw3")
 transform = Transform3D(0.87959, -0.436605, 0.188936, 0, 0.397148, 0.917755, -0.475732, -0.807248, 0.349328, 0, 0, 0)
 light_energy = 4.0
 shadow_enabled = true
+
+[node name="Barrel_A2" parent="." instance=ExtResource("2_wrj60")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.53832, 5.3468, 15.0537)
