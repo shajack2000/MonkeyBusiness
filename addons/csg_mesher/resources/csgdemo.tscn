@@ -1,0 +1,63 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtchnoptwhr7y"]
+
+[ext_resource type="Script" path="res://addons/csg_mesher/src/CSGMesher.gd" id="1_w0tnx"]
+
+[sub_resource type="Curve3D" id="Curve3D_ewc3k"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.246978, -1.46035, 2.53848, 0, 0, 0, 0, 0, 0, -0.716451, -1.43756, 2.25945, 0, 0, 0, 0, 0, 0, -1.7419, -1.46035, 2.54291, -0.114783, 0.0180904, 0.055994, 0.114783, -0.0180904, -0.055994, -2.74063, -1.46035, 2.54291, 0.550727, -0.067469, -0.328686, -0.550727, 0.067469, 0.328686, -3.75973, -1.46035, 3.54129, -0.0995536, -0.0187283, 0.441743, 0.0995536, 0.0187283, -0.441743, -5, -1.32635, 2.84954, 0, 0, 0, 0, 0, 0, -3.74831, -1.46035, 1.52673, 0, 0, 0, 0, 0, 0, -2.73304, -1.46035, 1.54427, 0, 0, 0, 0, 0, 0, -1.76285, -1.46035, 1.51574, -0.0881859, -0.117699, 0.408579, 0.0881859, 0.117699, -0.408579, -0.969242, -1.3717, 1.44112, -0.730152, 0.127609, 0.281183, 0.730152, -0.127609, -0.281183, -0.735596, -1.46035, 0.556966, 0, 0, 0, 0, 0, 0, 0.255538, -1.46035, 1.53277),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 12
+
+[node name="Node3D" type="Node3D"]
+
+[node name="path" type="CSGCombiner3D" parent="."]
+script = ExtResource("1_w0tnx")
+make = 2
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="path"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.73464, 1.46035, -0.849544)
+polygon = PackedVector2Array(-0.121419, -0.360323, 0.0892417, -0.394421, 0.0464142, -0.155211, -0.0502374, -0.15037)
+mode = 2
+path_node = NodePath("Path3D")
+path_interval_type = 0
+path_interval = 0.13
+path_simplify_angle = 0.0
+path_rotation = 1
+path_local = true
+path_continuous_u = true
+path_u_distance = 0.0
+path_joined = false
+
+[node name="Path3D" type="Path3D" parent="path/CSGPolygon3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.134, 0)
+curve = SubResource("Curve3D_ewc3k")
+
+[node name="CSGCombiner3D3" type="CSGCombiner3D" parent="path"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.58491)
+operation = 2
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="path/CSGCombiner3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7221, 0, 1.7)
+radius = 1.47259
+radial_segments = 14
+rings = 10
+
+[node name="boolean" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.90807)
+script = ExtResource("1_w0tnx")
+make = 3
+group = "foo"
+
+[node name="CSGCombiner3D2" type="CSGCombiner3D" parent="boolean"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="boolean/CSGCombiner3D2"]
+size = Vector3(5, 1, 5)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="boolean"]
+operation = 2
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="boolean/CSGCombiner3D"]
+radius = 0.981143
+radial_segments = 14
+rings = 10
