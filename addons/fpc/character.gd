@@ -49,6 +49,7 @@ extends CharacterBody3D
 @export var continuous_jumping : bool = true
 @export var view_bobbing : bool = true
 
+@onready var total_score := 0
 @onready var hand := $Head/Hand
 @onready var raycast := $Head/LookAtDetector
 @onready var reticle := $UserInterface/Reticle_1
@@ -312,3 +313,8 @@ func _unhandled_input(event):
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		HEAD.rotation_degrees.y -= event.relative.x * mouse_sensitivity
 		HEAD.rotation_degrees.x -= event.relative.y * mouse_sensitivity
+
+func _on_truck_truck_score_changed(score):
+	total_score = score
+	print("SCORE: %d" % [total_score])
+	$UserInterface/CenterContainer/Score.set_text("SCORE: %d" % [total_score])

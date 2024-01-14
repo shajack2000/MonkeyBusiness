@@ -1,19 +1,20 @@
-[gd_scene load_steps=58 format=3 uid="uid://cqq8e14ofssp3"]
+[gd_scene load_steps=64 format=3 uid="uid://cqq8e14ofssp3"]
 
-[ext_resource type="Texture2D" uid="uid://cf3hx838cdboq" path="res://truck/2011_muteki_taiga_1500_0.png" id="1_4kec8"]
-[ext_resource type="Texture2D" uid="uid://dy3j7k4fqc1x2" path="res://truck/2011_muteki_taiga_1500_1.png" id="2_etuw0"]
+[ext_resource type="Texture2D" uid="uid://dk44fr1dpyy5a" path="res://truck/src/2011_muteki_taiga_1500_0.png" id="1_4kec8"]
+[ext_resource type="Script" path="res://truck/truck.gd" id="1_ntbeq"]
+[ext_resource type="Texture2D" uid="uid://cqbwlvverrsl4" path="res://truck/src/2011_muteki_taiga_1500_1.png" id="2_etuw0"]
 [ext_resource type="Script" path="res://truck/ScoringArea.gd" id="2_w6li4"]
-[ext_resource type="Texture2D" uid="uid://c4chtmib1kvxh" path="res://truck/2011_muteki_taiga_1500_2.png" id="3_jvs6a"]
-[ext_resource type="AudioStream" uid="uid://dyxni44rjxx3x" path="res://objects/loot/dropmetalthing.ogg" id="3_xw8hi"]
-[ext_resource type="Texture2D" uid="uid://dgy3xr5sbbxbc" path="res://truck/2011_muteki_taiga_1500_3.png" id="4_mehy8"]
-[ext_resource type="Texture2D" uid="uid://bmfrapoye66o7" path="res://truck/2011_muteki_taiga_1500_4.png" id="5_su1fd"]
-[ext_resource type="Texture2D" uid="uid://br06p6o4xp5um" path="res://truck/2011_muteki_taiga_1500_5.png" id="6_j4tg4"]
-[ext_resource type="Texture2D" uid="uid://dr6ene4nrxltl" path="res://truck/2011_muteki_taiga_1500_6.png" id="7_yvwfa"]
-[ext_resource type="Texture2D" uid="uid://b3kq211a2y50s" path="res://truck/2011_muteki_taiga_1500_7.png" id="8_ppcvw"]
-[ext_resource type="Texture2D" uid="uid://d268lgq6abdbw" path="res://truck/2011_muteki_taiga_1500_8.png" id="9_pbrc7"]
-[ext_resource type="Texture2D" uid="uid://d1cjbyphsmbkq" path="res://truck/2011_muteki_taiga_1500_9.png" id="10_6inak"]
-[ext_resource type="Texture2D" uid="uid://tm2f0pusf1sj" path="res://truck/2011_muteki_taiga_1500_10.png" id="11_qv7r5"]
-[ext_resource type="Texture2D" uid="uid://2iotpf2fs8p1" path="res://truck/2011_muteki_taiga_1500_11.png" id="12_3vm0i"]
+[ext_resource type="Texture2D" uid="uid://dp0fb3m4l4ut2" path="res://truck/src/2011_muteki_taiga_1500_2.png" id="3_jvs6a"]
+[ext_resource type="AudioStream" uid="uid://dyxni44rjxx3x" path="res://items/loot/dropmetalthing.ogg" id="3_xw8hi"]
+[ext_resource type="Texture2D" uid="uid://x8q0jiihblsr" path="res://truck/src/2011_muteki_taiga_1500_3.png" id="4_mehy8"]
+[ext_resource type="Texture2D" uid="uid://ddlrodofet1e1" path="res://truck/src/2011_muteki_taiga_1500_4.png" id="5_su1fd"]
+[ext_resource type="Texture2D" uid="uid://da2oc2uvckexe" path="res://truck/src/2011_muteki_taiga_1500_5.png" id="6_j4tg4"]
+[ext_resource type="Texture2D" uid="uid://btaniamluw5hb" path="res://truck/src/2011_muteki_taiga_1500_6.png" id="7_yvwfa"]
+[ext_resource type="Texture2D" uid="uid://cuvrcygv1k7qt" path="res://truck/src/2011_muteki_taiga_1500_7.png" id="8_ppcvw"]
+[ext_resource type="Texture2D" uid="uid://x0e0ksarokh0" path="res://truck/src/2011_muteki_taiga_1500_8.png" id="9_pbrc7"]
+[ext_resource type="Texture2D" uid="uid://dyg343vd3nwyq" path="res://truck/src/2011_muteki_taiga_1500_9.png" id="10_6inak"]
+[ext_resource type="Texture2D" uid="uid://dugtj5rasnpky" path="res://truck/src/2011_muteki_taiga_1500_10.png" id="11_qv7r5"]
+[ext_resource type="Texture2D" uid="uid://c4i1d5j2ogt2" path="res://truck/src/2011_muteki_taiga_1500_11.png" id="12_3vm0i"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nyvij"]
 resource_name = "phong2"
@@ -61,6 +62,21 @@ size = Vector3(4.02808, 1, 5.25427)
 [sub_resource type="GDScript" id="GDScript_hji46"]
 script/source = "extends CollisionShape3D
 "
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_luavs"]
+size = Vector3(0.0415039, 1.18848, 5.28442)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y8njh"]
+size = Vector3(0.0415039, 1.21094, 5.28442)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6rwdy"]
+size = Vector3(0.0415039, 1.18848, 4.01894)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b1ull"]
+size = Vector3(5.21928, 0.642639, 4.01894)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u2hmx"]
+size = Vector3(0.208141, 1.40225, 4.01894)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ly0hi"]
 resource_name = "phong3"
@@ -648,33 +664,60 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ae70h")
 
 [node name="Truck" type="Node3D"]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -2.02935, 1.74935, 9.58062)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.0505631, 0.539159, 10.3569)
+script = ExtResource("1_ntbeq")
 
 [node name="Sketchfab_model" type="Node3D" parent="."]
-transform = Transform3D(43.0403, 0, 0, 0, 9.55687e-15, 43.0403, 0, -43.0403, 9.55687e-15, 0, 0, 0)
+transform = Transform3D(28.225, 0, 0, 0, -1.23375e-06, 28.225, 0, -28.225, -1.23375e-06, 0, 0, 0)
 
 [node name="89d5227907384f2bb14f31d188da5c43_fbx" type="Node3D" parent="Sketchfab_model"]
 transform = Transform3D(0.01, 0, 0, 0, 0, -0.01, 0, 0.01, 0, 0, 0, 0)
 
 [node name="RootNode" type="Node3D" parent="Sketchfab_model/89d5227907384f2bb14f31d188da5c43_fbx"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="pCube2" type="Node3D" parent="Sketchfab_model/89d5227907384f2bb14f31d188da5c43_fbx/RootNode"]
+[node name="Trunk" type="StaticBody3D" parent="Sketchfab_model/89d5227907384f2bb14f31d188da5c43_fbx/RootNode"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.241159, -7.06595)
+collision_layer = 513
 
-[node name="pCube2_phong2_0" type="MeshInstance3D" parent="Sketchfab_model/89d5227907384f2bb14f31d188da5c43_fbx/RootNode/pCube2"]
+[node name="pCube2_phong2_0" type="MeshInstance3D" parent="Sketchfab_model/89d5227907384f2bb14f31d188da5c43_fbx/RootNode/Trunk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_ej38j")
 skeleton = NodePath("")
 
-[node name="ScoringArea" type="Area3D" parent="Sketchfab_model/89d5227907384f2bb14f31d188da5c43_fbx/RootNode/pCube2"]
+[node name="ScoringArea" type="Area3D" parent="Sketchfab_model/89d5227907384f2bb14f31d188da5c43_fbx/RootNode/Trunk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+collision_layer = 513
+collision_mask = 513
 script = ExtResource("2_w6li4")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/89d5227907384f2bb14f31d188da5c43_fbx/RootNode/pCube2/ScoringArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00451684, 0, -2.13361)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/89d5227907384f2bb14f31d188da5c43_fbx/RootNode/Trunk/ScoringArea"]
+transform = Transform3D(1, 0, 0, 0, 1, -1.55254e-12, 0, 1.55254e-12, 1, 0.00451685, -1.19209e-07, -2.13361)
 shape = SubResource("BoxShape3D_jhy4u")
 script = SubResource("GDScript_hji46")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Sketchfab_model/89d5227907384f2bb14f31d188da5c43_fbx/RootNode/pCube2/ScoringArea"]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Sketchfab_model/89d5227907384f2bb14f31d188da5c43_fbx/RootNode/Trunk/ScoringArea"]
 stream = ExtResource("3_xw8hi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/89d5227907384f2bb14f31d188da5c43_fbx/RootNode/Trunk"]
+transform = Transform3D(1, 0, 0, 0, 1, -1.78406e-20, 0, 1.78406e-20, 1, 2.06988, -0.0942383, -2.12629)
+shape = SubResource("BoxShape3D_luavs")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Sketchfab_model/89d5227907384f2bb14f31d188da5c43_fbx/RootNode/Trunk"]
+transform = Transform3D(1, 0, 0, 0, 1, -1.50348e-20, 0, 1.50348e-20, 1, -2.05248, -0.105469, -2.0926)
+shape = SubResource("BoxShape3D_y8njh")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Sketchfab_model/89d5227907384f2bb14f31d188da5c43_fbx/RootNode/Trunk"]
+transform = Transform3D(-0.00513127, -2.22063e-16, -0.999987, 2.22039e-16, 1, -2.23205e-16, 0.999987, -2.23181e-16, -0.00513127, 0.00412755, -0.0880005, -4.7469)
+shape = SubResource("BoxShape3D_6rwdy")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Sketchfab_model/89d5227907384f2bb14f31d188da5c43_fbx/RootNode/Trunk"]
+transform = Transform3D(-0.00513127, -2.22063e-16, -0.999987, 2.22039e-16, 1, -2.23205e-16, 0.999987, -2.23181e-16, -0.00513127, 0.00697933, -0.999347, -2.1464)
+shape = SubResource("BoxShape3D_b1ull")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Sketchfab_model/89d5227907384f2bb14f31d188da5c43_fbx/RootNode/Trunk"]
+transform = Transform3D(-0.00513127, -2.22063e-16, -0.999987, 2.22039e-16, 1, -2.23205e-16, 0.999987, -2.23181e-16, -0.00513127, -0.00587742, -0.216121, 0.617925)
+shape = SubResource("BoxShape3D_u2hmx")
 
 [node name="pCube3" type="Node3D" parent="Sketchfab_model/89d5227907384f2bb14f31d188da5c43_fbx/RootNode"]
 transform = Transform3D(1, 0, 0, 0, 0.222222, 0, 0, 0, 1, 0, -0.68678, -0.523556)
@@ -687,7 +730,6 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.550287)
 
 [node name="polySurface1_phong1_0" type="MeshInstance3D" parent="Sketchfab_model/89d5227907384f2bb14f31d188da5c43_fbx/RootNode/polySurface1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_iv3hy")
 skeleton = NodePath("")
 
@@ -788,6 +830,7 @@ transform = Transform3D(-0.154, 0, 0, 0, 0.154129, -7.35504e-17, 0, 1.88753e-17,
 mesh = SubResource("ArrayMesh_o3ub0")
 skeleton = NodePath("")
 
-[connection signal="area_entered" from="Sketchfab_model/89d5227907384f2bb14f31d188da5c43_fbx/RootNode/pCube2/ScoringArea" to="Sketchfab_model/89d5227907384f2bb14f31d188da5c43_fbx/RootNode/pCube2/ScoringArea" method="_on_area_entered"]
-[connection signal="body_entered" from="Sketchfab_model/89d5227907384f2bb14f31d188da5c43_fbx/RootNode/pCube2/ScoringArea" to="Sketchfab_model/89d5227907384f2bb14f31d188da5c43_fbx/RootNode/pCube2/ScoringArea" method="_on_body_entered"]
-[connection signal="body_exited" from="Sketchfab_model/89d5227907384f2bb14f31d188da5c43_fbx/RootNode/pCube2/ScoringArea" to="Sketchfab_model/89d5227907384f2bb14f31d188da5c43_fbx/RootNode/pCube2/ScoringArea" method="_on_body_exited"]
+[connection signal="area_entered" from="Sketchfab_model/89d5227907384f2bb14f31d188da5c43_fbx/RootNode/Trunk/ScoringArea" to="Sketchfab_model/89d5227907384f2bb14f31d188da5c43_fbx/RootNode/Trunk/ScoringArea" method="_on_area_entered"]
+[connection signal="body_entered" from="Sketchfab_model/89d5227907384f2bb14f31d188da5c43_fbx/RootNode/Trunk/ScoringArea" to="Sketchfab_model/89d5227907384f2bb14f31d188da5c43_fbx/RootNode/Trunk/ScoringArea" method="_on_body_entered"]
+[connection signal="body_exited" from="Sketchfab_model/89d5227907384f2bb14f31d188da5c43_fbx/RootNode/Trunk/ScoringArea" to="Sketchfab_model/89d5227907384f2bb14f31d188da5c43_fbx/RootNode/Trunk/ScoringArea" method="_on_body_exited"]
+[connection signal="score_changed" from="Sketchfab_model/89d5227907384f2bb14f31d188da5c43_fbx/RootNode/Trunk/ScoringArea" to="." method="_on_scoring_area_score_changed"]
