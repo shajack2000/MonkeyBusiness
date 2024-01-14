@@ -251,6 +251,8 @@ func _process(delta):
 	
 	if Input.is_action_just_pressed("interact"):
 		interact()
+	if Input.is_action_just_pressed("use"):
+		use()
 	
 	if raycast.is_colliding():
 		var what : Object = raycast.get_collider()
@@ -274,6 +276,10 @@ func interact():
 	else:
 		drop()
 
+func use():
+	if what_holding and what_holding.has_signal("use"):
+		what_holding.emit_signal("use")
+
 func grab():
 	var what = raycast.get_collider()
 	
@@ -289,18 +295,19 @@ func grab():
 		pass
 	
 func drop():
+	var orientation = CAMERA.global_transform.basis.get_euler()
 	is_holding = false
 	for child in what_holding.get_children():
 		if child is CollisionShape3D:
 			child.disabled = false
 	
 	hand.remote_path = ""
+	#TODO: Make apply_central_impulse based on camera's global rotation
+	# item must fly away from person slightly when dropped
+	what_holding.apply_central_impulse(Vector3(orientation.x*10,3,0))
 	what_holding = null
 	
 func tap():
-	pass
-
-func use():
 	pass
 
 func reset_reticle(): 
