@@ -1,8 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://cc1m2a1obsyn4"]
+[gd_scene load_steps=13 format=3 uid="uid://cc1m2a1obsyn4"]
 
 [ext_resource type="Script" path="res://addons/fpc/character.gd" id="1_0t4e8"]
 [ext_resource type="PackedScene" uid="uid://3mij3cjhkwsm" path="res://addons/fpc/reticles/reticle_1.tscn" id="2_uuexm"]
 [ext_resource type="Script" path="res://addons/fpc/debug.gd" id="3_x1wcc"]
+[ext_resource type="AudioStream" uid="uid://d0egrcrn8if48" path="res://items/grab.mp3" id="4_0xxcd"]
+[ext_resource type="AudioStream" uid="uid://d4cepa8vy5w3j" path="res://items/drop.mp3" id="5_0a7k1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kp17n"]
 albedo_color = Color(0.909804, 0.596078, 0, 1)
@@ -134,7 +136,7 @@ collision_mask = 512
 libraries = {
 "": SubResource("AnimationLibrary_o0unb")
 }
-blend_times = [&"headbob", &"RESET", 0.5, &"RESET", &"headbob", 0.5, &"RESET", &"RESET", 0.5]
+blend_times = [&"RESET", &"RESET", 0.5, &"RESET", &"headbob", 0.5, &"headbob", &"RESET", 0.5]
 
 [node name="Hand" type="RemoteTransform3D" parent="Head"]
 transform = Transform3D(-0.984808, 0, -0.173648, 0, 1, 0, 0.173648, 0, -0.984808, 0.718, -0.375, -0.59)
@@ -174,5 +176,19 @@ layout_mode = 2
 [node name="CrouchCeilingDetection" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 target_position = Vector3(0, 1, 0)
+
+[node name="GrabSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_0xxcd")
+attenuation_model = 1
+volume_db = -5.0
+unit_size = 1.0
+max_db = -5.0
+
+[node name="DropSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_0a7k1")
+attenuation_model = 1
+volume_db = -5.0
+unit_size = 1.0
+max_db = -5.0
 
 [editable path="UserInterface/Reticle_1"]
