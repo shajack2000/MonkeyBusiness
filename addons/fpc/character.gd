@@ -283,11 +283,7 @@ func use():
 func grab():
 	var what = raycast.get_collider()
 	
-	if what and what.is_in_group("grabbable") and !is_holding:
-		for child in what.get_children():
-			if child is CollisionShape3D:
-				child.disabled = true
-		
+	if what and what.is_in_group("grabbable") and !is_holding:	
 		hand.remote_path = what.get_path()
 		is_holding = true
 		what_holding = what
@@ -295,16 +291,15 @@ func grab():
 		pass
 	
 func drop():
-	var orientation = CAMERA.global_transform.basis.get_euler()
-	is_holding = false
-	for child in what_holding.get_children():
-		if child is CollisionShape3D:
-			child.disabled = false
-	
+	var direction = -CAMERA.global_transform.basis.z
+	var speed = 3 # Base speed for light items
+	var mass = what_holding.mass # Mass of the dropped item
+	var impulseSpeed = speed * (1 + mass) # Adjust the speed based on the mass of the item
+	var upwardImpulse = Vector3(0, 5, 0) # Adjust this value to control the amount of upward impulse
+   
 	hand.remote_path = ""
-	#TODO: Make apply_central_impulse based on camera's global rotation
-	# item must fly away from person slightly when dropped
-	what_holding.apply_central_impulse(Vector3(orientation.x*10,3,0))
+	what_holding.linear_velocity = direction * impulseSpeed
+	is_holding = false
 	what_holding = null
 	
 func tap():

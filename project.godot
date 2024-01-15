@@ -79,3 +79,7 @@ use={
 
 3d_physics/layer_10="grabbable"
 3d_physics/layer_11="pushable"
+
+[physics]
+
+common/physics_ticks_per_second=120

@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://c6ljn1xgnobfo"]
+[gd_scene load_steps=14 format=3 uid="uid://c6ljn1xgnobfo"]
 
+[ext_resource type="PhysicsMaterial" uid="uid://3o3pyauj55jl" path="res://items/grabbable_phys_mat.tres" id="1_2ih27"]
 [ext_resource type="Script" path="res://items/pistol/pistol.gd" id="1_84eue"]
 [ext_resource type="Texture2D" uid="uid://cajsrvddjpnxc" path="res://items/pistol/pistol_T_PolygonHeist_01_A.png" id="1_isrc8"]
 [ext_resource type="AudioStream" uid="uid://caukb2tr8feol" path="res://items/pistol/pistol_sound.mp3" id="2_4bbgy"]
@@ -73,7 +74,8 @@ is_hemisphere = true
 
 [node name="Pistol" type="RigidBody3D" groups=["grabbable"]]
 collision_layer = 512
-mass = 0.5
+mass = 0.7
+physics_material_override = ExtResource("1_2ih27")
 script = ExtResource("1_84eue")
 
 [node name="bullet" type="GPUParticles3D" parent="."]

@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://cw0r0lvcfffgy"]
+[gd_scene load_steps=8 format=3 uid="uid://cw0r0lvcfffgy"]
 
+[ext_resource type="PhysicsMaterial" uid="uid://3o3pyauj55jl" path="res://items/grabbable_phys_mat.tres" id="1_ahb7b"]
 [ext_resource type="Texture2D" uid="uid://iaon1udrwhyi" path="res://items/banana/banana_0.png" id="1_f8mwk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yngeo"]
@@ -42,20 +43,26 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_uvusw")
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_aopfc"]
-radius = 0.0739365
-height = 0.491118
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_pbsm3"]
+points = PackedVector3Array(0.653222, 0.343024, 0.0507677, -0.02605, 0.0582226, 0.116528, -0.02605, 0.0143759, -0.146458, 0.507515, 0.100147, -0.104626, 0.193143, -0.139001, 0.116528, 0.565627, 0.386871, -0.0368292, -0.02605, -0.182906, -0.10259, 0.489126, 0.0270827, 0.0599707, -0.00401396, 0.123848, -0.0368292, -0.02605, -0.117164, 0.138448, 0.531355, 0.175571, 0.0993889, 0.675258, 0.343024, -0.0587494, 0.456065, 0.25533, -0.12451, 0.149277, -0.139001, -0.12451, 0.343275, -0.0864864, -0.0319919, 0.456065, 0.277283, 0.0946081, -0.02605, 0.101954, 0.0726879, 0.569573, 0.10042, -0.0510783, 0.127378, -0.09527, -0.146458, 0.10548, -0.182906, 0.0946081, -0.02605, 0.101954, -0.0806696, 0.615699, 0.178333, 0.0445137, 0.565627, 0.386871, 0.00692742, -0.02605, 0.0143759, 0.138448, 0.0616822, -0.204858, -0.0587494, 0.10548, -0.117164, 0.138448, -0.02605, -0.161011, 0.116528, 0.675258, 0.277283, -0.0587494, 0.46903, 0.00981448, -0.0671823, 0.486313, 0.0641263, 0.0948226, -0.02605, -0.117164, -0.146458, 0.398519, 0.0818177, 0.116201)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_me0lo"]
+points = PackedVector3Array(-0.357934, -0.121858, -0.050927, -0.661593, 0.430702, -0.0368292, -0.02605, 0.101973, -0.0806696, -0.02605, -0.117139, 0.138448, -0.02605, -0.117139, -0.146458, -0.545316, 0.0286217, 0.0615613, -0.02605, 0.0800742, 0.0946081, -0.541574, 0.0488507, -0.0864165, -0.727358, 0.430702, 0.0288476, -0.201377, -0.182897, 0.0946081, -0.223413, 0.0143158, 0.138448, -0.0918148, 0.0362767, -0.146458, -0.57393, 0.408741, 0.0288476, -0.413311, 0.0122005, -0.123071, -0.15758, -0.160998, -0.12451, -0.0522261, -0.181136, -0.0546627, -0.528837, -0.029755, -0.0324981, -0.02605, 0.0143158, 0.138448, -0.727358, 0.386843, -0.0149091, -0.448654, 0.0319274, 0.0950005, -0.048086, 0.123809, -0.0149091, -0.705391, 0.430702, -0.0368292, -0.588943, 0.0454108, 0.00562459, -0.433434, -0.0859474, 0.0433418, -0.450662, -0.0443428, -0.0872415, -0.179478, -0.117139, -0.146458, -0.02605, 0.0581754, -0.12451, -0.412953, 0.0676115, -0.121905, -0.0564338, -0.177323, 0.0660426, -0.57393, 0.408741, -0.0149091, -0.58832, 0.0648413, -0.0520838, -0.727358, 0.386843, 0.0288476)
 
 [node name="banana" type="RigidBody3D" groups=["grabbable"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.55989, -3.44563)
 collision_layer = 512
-mass = 0.05
+mass = 0.11
+physics_material_override = ExtResource("1_ahb7b")
 
 [node name="banana_mesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0, 0, 0)
 mesh = SubResource("ArrayMesh_p80rk")
 skeleton = NodePath("")
 
+[node name="@CollisionShape3D@46076" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_pbsm3")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0.0474932, 0)
-shape = SubResource("CapsuleShape3D_aopfc")
+transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_me0lo")
