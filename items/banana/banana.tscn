@@ -51,6 +51,7 @@ points = PackedVector3Array(-0.357934, -0.121858, -0.050927, -0.661593, 0.430702
 
 [node name="banana" type="RigidBody3D" groups=["grabbable"]]
 collision_layer = 512
+collision_mask = 513
 mass = 0.11
 physics_material_override = ExtResource("1_ahb7b")
 

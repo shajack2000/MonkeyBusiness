@@ -74,6 +74,7 @@ is_hemisphere = true
 
 [node name="Pistol" type="RigidBody3D" groups=["grabbable"]]
 collision_layer = 512
+collision_mask = 513
 mass = 0.7
 physics_material_override = ExtResource("1_2ih27")
 script = ExtResource("1_84eue")
