@@ -674,19 +674,16 @@ transform = Transform3D(28.225, 0, 0, 0, -1.23375e-06, 28.225, 0, -28.225, -1.23
 transform = Transform3D(0.01, 0, 0, 0, 0, -0.01, 0, 0.01, 0, 0, 0, 0)
 
 [node name="RootNode" type="Node3D" parent="Sketchfab_model/89d5227907384f2bb14f31d188da5c43_fbx"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Trunk" type="StaticBody3D" parent="Sketchfab_model/89d5227907384f2bb14f31d188da5c43_fbx/RootNode"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.241159, -7.06595)
 collision_layer = 513
 
 [node name="pCube2_phong2_0" type="MeshInstance3D" parent="Sketchfab_model/89d5227907384f2bb14f31d188da5c43_fbx/RootNode/Trunk"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_ej38j")
 skeleton = NodePath("")
 
 [node name="ScoringArea" type="Area3D" parent="Sketchfab_model/89d5227907384f2bb14f31d188da5c43_fbx/RootNode/Trunk"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 collision_layer = 513
 collision_mask = 513
 script = ExtResource("2_w6li4")
