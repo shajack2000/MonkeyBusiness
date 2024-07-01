@@ -53,6 +53,9 @@ extends CharacterBody3D
 @onready var hand := $Head/Hand
 @onready var raycast := $Head/LookAtDetector
 @onready var reticle := $UserInterface/Reticle_1
+@onready var grab_sound := $GrabSound
+@onready var drop_sound := $DropSound
+
 var is_holding := false
 var what_holding : Object
 signal sees_grabbable
@@ -252,6 +255,8 @@ func _process(delta):
 	
 	if Input.is_action_just_pressed("interact"):
 		interact()
+	if Input.is_action_just_pressed("use"):
+		use()
 	
 	if raycast.is_colliding():
 		var what : Object = raycast.get_collider()
@@ -275,14 +280,15 @@ func interact():
 	else:
 		drop()
 
+func use():
+	if what_holding and what_holding.has_signal("use"):
+		what_holding.emit_signal("use")
+
 func grab():
 	var what = raycast.get_collider()
 	
 	if what and what.is_in_group("grabbable") and !is_holding:
-		for child in what.get_children():
-			if child is CollisionShape3D:
-				child.disabled = true
-		
+		grab_sound.play()	
 		hand.remote_path = what.get_path()
 		is_holding = true
 		what_holding = what
@@ -290,18 +296,19 @@ func grab():
 		pass
 	
 func drop():
-	is_holding = false
-	for child in what_holding.get_children():
-		if child is CollisionShape3D:
-			child.disabled = false
-	
+	var direction = -CAMERA.global_transform.basis.z
+	var speed = 2 # Base speed for light items
+	var mass = what_holding.mass # Mass of the dropped item
+	var impulseSpeed = speed / sqrt(mass) # Adjust the speed based on the mass of the item
+	var upwardImpulse = Vector3(0, 7, 0) # Adjust this value to control the amount of upward impulse
+   
+	drop_sound.play()
 	hand.remote_path = ""
+	what_holding.linear_velocity = direction * impulseSpeed
+	is_holding = false
 	what_holding = null
 	
 func tap():
-	pass
-
-func use():
 	pass
 
 func reset_reticle(): 
