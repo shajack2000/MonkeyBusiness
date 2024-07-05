@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=3 uid="uid://coydpx8yrk74k"]
+
+[ext_resource type="Script" path="res://levels/test_level/heist_zone/test_map_generator.gd" id="1_epmun"]
+[ext_resource type="MeshLibrary" uid="uid://ftaslo276nol" path="res://mesh_libraries/placeholder/placeholder_mesh_library.tres" id="1_fonyl"]
+[ext_resource type="PackedScene" uid="uid://8wwsoqhtm08s" path="res://characters/test_character/test_buddy.tscn" id="3_vy2vb"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6svlb"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_yf4nt"]
+sky_material = SubResource("ProceduralSkyMaterial_6svlb")
+
+[sub_resource type="Environment" id="Environment_y6d2d"]
+background_mode = 2
+sky = SubResource("Sky_yf4nt")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_lm8nd"]
+size = Vector2(100, 100)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_w5dg7"]
+points = PackedVector3Array(-50, 0, -50, -50, 0, 50, 50, 0, -50, 50, 0, 50)
+
+[node name="TestScene" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.006464, -0.0223558, -0.0326138)
+script = ExtResource("1_epmun")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_y6d2d")
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("1_fonyl")
+cell_size = Vector3(1, 1, 1)
+
+[node name="TestBuddy" parent="." instance=ExtResource("3_vy2vb")]
+mouse_sensitivity = 0.1
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -13.5866, 0)
+mesh = SubResource("PlaneMesh_lm8nd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -13.5866, 0)
+shape = SubResource("ConvexPolygonShape3D_w5dg7")
