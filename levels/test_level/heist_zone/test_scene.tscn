@@ -39,6 +39,8 @@ mesh_library = ExtResource("1_fonyl")
 cell_size = Vector3(1, 1, 1)
 
 [node name="TestBuddy" parent="." instance=ExtResource("3_vy2vb")]
+HEAD = Object(Node3D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.393099, -0.144275),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"script":null)
+
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 

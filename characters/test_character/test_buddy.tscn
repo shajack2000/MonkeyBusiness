@@ -9,9 +9,19 @@ albedo_color = Color(0.4, 0.0705882, 0, 1)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2tvs6"]
 
-[node name="TestBuddy" type="CharacterBody3D" node_paths=PackedStringArray("HEAD")]
+[node name="TestBuddy" type="CharacterBody3D"]
 script = ExtResource("1_8gbb5")
-HEAD = NodePath("Head")
+mouse_sensitivity = null
+JUMP = null
+LEFT = null
+RIGHT = null
+FORWARD = null
+BACKWARD = null
+PAUSE = null
+CROUCH = null
+SPRINT = null
+HEAD = Object(Node3D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.393099, -0.144275),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"script":null)
+
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_bpbo7")

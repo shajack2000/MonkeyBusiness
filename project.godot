@@ -23,6 +23,7 @@ enabled=PackedStringArray("res://addons/csg_mesher/plugin.cfg")
 
 folder_colors={
 "res://addons/": "gray",
+"res://characters/": "yellow",
 "res://constructs/": "green",
 "res://items/": "teal",
 "res://levels/": "purple",
