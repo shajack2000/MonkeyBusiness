@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="Monkey Business"
-run/main_scene="res://levels/bank_level/overworld/banana_bank.tscn"
+run/main_scene="res://levels/bank/overworld/banana_bank.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/csg_mesher/plugin.cfg")
+enabled=PackedStringArray("res://addons/SimpleDungeons/plugin.cfg", "res://addons/csg_mesher/plugin.cfg")
 
 [file_customization]
 
@@ -28,7 +28,8 @@ folder_colors={
 "res://items/": "teal",
 "res://levels/": "purple",
 "res://menus/": "blue",
-"res://props/": "green"
+"res://props/": "green",
+"res://rooms/": "orange"
 }
 
 [input]

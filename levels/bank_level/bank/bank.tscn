@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://bbn5t571yg868"]
-
-[node name="Bank" type="Node3D"]
-
-[node name="GridMap" type="GridMap" parent="."]

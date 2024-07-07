@@ -3,8 +3,6 @@ extends CharacterBody3D
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
-@export class player
-
 @export var mouse_sensitivity : float = 0.1
 
 @export_group("Nodes")
@@ -51,11 +49,11 @@ func _physics_process(delta):
 
 	move_and_slide()
 	
-func _process(_delta):
-	HEAD.rotation.x = clamp(HEAD.rotation.x, deg_to_rad(-90), deg_to_rad(90))
+#func _process(_delta):
+	#HEAD.rotation.x = clamp(HEAD.rotation.x, deg_to_rad(-90), deg_to_rad(90))
 	
-func _input(event):
-	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-		self.rotation_degrees.y -= event.relative.x * mouse_sensitivity
-		HEAD.rotation_degrees.x -= event.relative.y * mouse_sensitivity
+#func _input(event):
+	#if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+		#self.rotation_degrees.y -= event.relative.x * mouse_sensitivity
+		#HEAD.rotation_degrees.x -= event.relative.y * mouse_sensitivity
 

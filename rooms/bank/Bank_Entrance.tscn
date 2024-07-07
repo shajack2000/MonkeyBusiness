@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1p3tx30mjly2"]
+
+[ext_resource type="Script" path="res://addons/SimpleDungeons/DungeonRoom3D.gd" id="1_ahy0r"]
+
+[node name="BankEntrance" type="Node3D"]
+script = ExtResource("1_ahy0r")
+size_in_voxels = Vector3i(3, 2, 2)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+use_collision = true
+size = Vector3(30, 20, 20)
+
+[node name="RoomCut" type="CSGBox3D" parent="CSGBox3D"]
+operation = 2
+size = Vector3(29.5, 19.5, 19.5)
+
+[node name="DOOR_FRONT" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6, 9.987)
+operation = 2
+size = Vector3(8, 7, 1)
+
+[node name="DOOR?_BACKRIGHT" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -6, -10)
+operation = 2
+size = Vector3(4, 7, 1)
+
+[node name="DOOR?_BACKLEFT" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -6, -10)
+operation = 2
+size = Vector3(4, 7, 1)
+
+[node name="DOOR?_LEFT" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -15, -6, -5)
+operation = 2
+size = Vector3(4, 7, 1)
+
+[node name="DOOR?_RIGHT" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15, -6, -5)
+operation = 2
+size = Vector3(4, 7, 1)
