@@ -1,0 +1,61 @@
+[gd_scene load_steps=3 format=3 uid="uid://c82e6qkjonmci"]
+
+[ext_resource type="Script" path="res://addons/SimpleDungeons/DungeonRoom3D.gd" id="1_5mlun"]
+
+[sub_resource type="GDScript" id="GDScript_nkh1y"]
+resource_name = "RemoveUnusedDoors"
+script/source = "extends Node
+
+func _ready():
+	$\"..\".connect(\"dungeon_done_generating\", remove_unused_doors)
+
+func remove_unused_doors():
+	for door in $\"..\".get_doors():
+		if door.get_room_leads_to() == null:
+			door.door_node.queue_free()
+"
+
+[node name="Bank_Corridor" type="Node3D"]
+script = ExtResource("1_5mlun")
+size_in_voxels = Vector3i(1, 1, 6)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+use_collision = true
+size = Vector3(10, 10, 60)
+
+[node name="RoomCut" type="CSGBox3D" parent="CSGBox3D"]
+operation = 2
+size = Vector3(9.5, 9.5, 59.5)
+
+[node name="DOOR?_FRONT" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.25, 29.5296)
+operation = 2
+size = Vector3(4, 7, 1)
+
+[node name="DOOR?_BACK" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.25, -29.5071)
+operation = 2
+size = Vector3(4, 7, 1)
+
+[node name="DOOR?_RIGHT_A" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.525, -1.25, -15)
+operation = 2
+size = Vector3(4, 7, 1)
+
+[node name="DOOR?_RIGHT_B" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.525, -1.25, 15)
+operation = 2
+size = Vector3(4, 7, 1)
+
+[node name="DOOR?_LEFT_A" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.521, -1.25, 15)
+operation = 2
+size = Vector3(4, 7, 1)
+
+[node name="DOOR?_LEFT_B" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.521, -1.25, -15)
+operation = 2
+size = Vector3(4, 7, 1)
+
+[node name="Node" type="Node" parent="."]
+script = SubResource("GDScript_nkh1y")

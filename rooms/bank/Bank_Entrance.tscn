@@ -1,6 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://c1p3tx30mjly2"]
+[gd_scene load_steps=3 format=3 uid="uid://c1p3tx30mjly2"]
 
 [ext_resource type="Script" path="res://addons/SimpleDungeons/DungeonRoom3D.gd" id="1_ahy0r"]
+
+[sub_resource type="GDScript" id="GDScript_i1001"]
+resource_name = "RemoveUnusedDoors"
+script/source = "extends Node
+
+func _ready():
+	$\"..\".connect(\"dungeon_done_generating\", remove_unused_doors)
+
+func remove_unused_doors():
+	for door in $\"..\".get_doors():
+		if door.get_room_leads_to() == null:
+			door.door_node.queue_free()
+"
 
 [node name="BankEntrance" type="Node3D"]
 script = ExtResource("1_ahy0r")
@@ -14,27 +27,25 @@ size = Vector3(30, 20, 20)
 operation = 2
 size = Vector3(29.5, 19.5, 19.5)
 
-[node name="DOOR_FRONT" type="CSGBox3D" parent="CSGBox3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6, 9.50087)
-operation = 2
-size = Vector3(8, 7, 1)
-
 [node name="DOOR?_BACKRIGHT" type="CSGBox3D" parent="CSGBox3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -6, -9.53309)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -6.25, -9.533)
 operation = 2
 size = Vector3(4, 7, 1)
 
 [node name="DOOR?_BACKLEFT" type="CSGBox3D" parent="CSGBox3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -6, -9.51166)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -6.25, -9.512)
 operation = 2
 size = Vector3(4, 7, 1)
 
 [node name="DOOR?_LEFT" type="CSGBox3D" parent="CSGBox3D"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14.5215, -6, -5)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14.521, -6.25, -5)
 operation = 2
 size = Vector3(4, 7, 1)
 
 [node name="DOOR?_RIGHT" type="CSGBox3D" parent="CSGBox3D"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14.5176, -6, -5)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14.518, -6.25, -5)
 operation = 2
 size = Vector3(4, 7, 1)
+
+[node name="Node" type="Node" parent="."]
+script = SubResource("GDScript_i1001")
