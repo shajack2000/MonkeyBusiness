@@ -16,11 +16,11 @@ operation = 2
 size = Vector3(19.5, 19.5, 9.5)
 
 [node name="DOOR_BOTTOM" type="CSGBox3D" parent="CSGBox3D"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10, -6, 0)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.52448, -6, 0)
 operation = 2
 size = Vector3(4, 7, 1)
 
 [node name="DOOR_TOP" type="CSGBox3D" parent="CSGBox3D"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10, 4, 0)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.62054, 4, 0)
 operation = 2
 size = Vector3(4, 7, 1)

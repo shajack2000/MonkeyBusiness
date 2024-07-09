@@ -14,21 +14,21 @@ operation = 2
 size = Vector3(9.5, 9.5, 9.5)
 
 [node name="DOOR?_FRONT" type="CSGBox3D" parent="CSGBox3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 4.5205)
 operation = 2
 size = Vector3(4, 7, 1)
 
 [node name="DOOR?_BACK" type="CSGBox3D" parent="CSGBox3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -4.56431)
 operation = 2
 size = Vector3(4, 7, 1)
 
 [node name="DOOR?_RIGHT" type="CSGBox3D" parent="CSGBox3D"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5, -1, 0)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.52473, -1, 0)
 operation = 2
 size = Vector3(4, 7, 1)
 
 [node name="DOOR?_LEFT" type="CSGBox3D" parent="CSGBox3D"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5, -1, 0)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.52124, -1, 0)
 operation = 2
 size = Vector3(4, 7, 1)
