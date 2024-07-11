@@ -43,3 +43,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 70)
 
 [node name="TestBuddy" parent="." instance=ExtResource("3_vy2vb")]
 transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, -12.7627, 77.9697)
+
+[connection signal="done_generating" from="DungeonGenerator3D" to="." method="_spawn_loot"]

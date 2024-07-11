@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/SimpleDungeons/plugin.cfg", "res://addons/csg_mesher/plugin.cfg")
+enabled=PackedStringArray("res://addons/SimpleDungeons/plugin.cfg", "res://addons/csg_mesher/plugin.cfg", "res://addons/sketchfab/plugin.cfg")
 
 [file_customization]
 
@@ -27,6 +27,7 @@ folder_colors={
 "res://constructs/": "green",
 "res://items/": "teal",
 "res://levels/": "purple",
+"res://loot/": "yellow",
 "res://menus/": "blue",
 "res://props/": "green",
 "res://rooms/": "orange"
