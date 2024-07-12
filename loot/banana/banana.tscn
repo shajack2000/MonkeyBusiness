@@ -1,6 +1,5 @@
 [gd_scene load_steps=2 format=3 uid="uid://cs8p18lvgu26u"]
 
-[ext_resource type="Script" path="res://loot/banana/banana.gd" id="1_kh7nb"]
+[ext_resource type="PackedScene" uid="uid://c6r8iuslbb7gh" path="res://loot/banana/low_poly_banana_free.glb" id="1_rp3dc"]
 
-[node name="Banana" groups=["grabbable"]]
-script = ExtResource("1_kh7nb")
+[node name="Banana" instance=ExtResource("1_rp3dc")]
