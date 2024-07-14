@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://d1bb4auanbqar"]
 
 [ext_resource type="Script" path="res://items/flashlight/flashlight.gd" id="1_61wft"]
-[ext_resource type="PhysicsMaterial" uid="uid://3o3pyauj55jl" path="res://items/grabbable_phys_mat.tres" id="1_f6kw7"]
+[ext_resource type="PhysicsMaterial" path="res://items/grabbable_phys_mat.tres" id="1_f6kw7"]
 [ext_resource type="Texture2D" uid="uid://bkywsw1nvlvvh" path="res://items/flashlight/flashlight_T_PolygonHorror_Texture_01_A.png" id="1_n63cr"]
 [ext_resource type="Texture2D" uid="uid://depgubc0q3kbw" path="res://items/flashlight/flashlight_T_Emissive_01.png" id="2_ywuqc"]
 [ext_resource type="AudioStream" uid="uid://dq3t0hqt27wsj" path="res://items/flashlight/flip_switch_trimmed.mp3" id="4_4qv3c"]

@@ -12,12 +12,14 @@ func _spawn_loot():
 	for room in rooms:
 		var banana_loot_copy = banana_loot.instantiate()
 		print(banana_loot_copy)
-		var x_variance = (room.voxel_scale.x * room.size_in_voxels.x / 2) - 0.5
-		var y_variance = (room.voxel_scale.y * room.size_in_voxels.y / 2) - 0.5
-		var loot_x = room.position.x + RNG.randf_range(-x_variance, x_variance)
-		var loot_y = room.position.y + RNG.randf_range(-y_variance, y_variance)
-		banana_loot_copy.position.x = loot_x
-		banana_loot_copy.position.y = loot_y
-		banana_loot_copy.position.y = room.position.z + 5
+		#var x_variance = (room.voxel_scale.x * room.size_in_voxels.x / 2) - 0.5
+		#var y_variance = (room.voxel_scale.y * room.size_in_voxels.y / 2) - 0.5
+		#var z_variance = (room.voxel_scale.y * room.size_in_voxels.y / 2) - 0.5
+		#var loot_x = room.position.x + RNG.randf_range(-x_variance, x_variance)
+		#var loot_y = room.position.y + RNG.randf_range(-y_variance, y_variance)
+		#var loot_z = room.position.z + RNG.randf_range(-z_variance, z_variance)
+		banana_loot_copy.position.x = room.position.x # loot_x
+		banana_loot_copy.position.y = room.position.y # loot_y
+		banana_loot_copy.position.z = room.position.z # room.position.z + 8
 		add_child(banana_loot_copy)
 		
