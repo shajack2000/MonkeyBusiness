@@ -1,12 +1,15 @@
 extends Control
 
+func _process(delta):
+	if $AudioStreamPlayer.playing == false:
+		$AudioStreamPlayer.play()
 
 func _on_new_game_pressed():
-	get_tree().change_scene_to_file("res://levels/bank/banana_bank.tscn")
+	get_tree().change_scene_to_file("res://levels/test_level/heist_zone/test_scene.tscn")
 
 
 func _on_continue_pressed():
-	get_tree().change_scene_to_file("res://levels/bank/banana_bank.tscn")
+	get_tree().change_scene_to_file("res://levels/test_level/heist_zone/test_scene.tscn")
 
 
 func _on_settings_pressed():
