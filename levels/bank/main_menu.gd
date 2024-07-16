@@ -1,5 +1,11 @@
 extends Control
 
+<<<<<<< Updated upstream
+=======
+func _process(delta):
+	if $MenuMusicCool.playing == false:
+		$MenuMusicCool.play()
+>>>>>>> Stashed changes
 
 func _on_new_game_pressed():
 	get_tree().change_scene_to_file("res://levels/bank/banana_bank.tscn")
