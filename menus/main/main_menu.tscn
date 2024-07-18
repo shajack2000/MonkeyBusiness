@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://hjyf8w6ned31"]
+[gd_scene load_steps=6 format=3 uid="uid://hjyf8w6ned31"]
 
 [ext_resource type="Script" path="res://levels/bank/main_menu.gd" id="1_idpu5"]
 [ext_resource type="Texture2D" uid="uid://c5hjuk6vdnmdq" path="res://menus/main/monkey_business_logo.png" id="2_viigy"]
+[ext_resource type="AudioStream" uid="uid://byqf8y4t8augq" path="res://music/temprorary (NOT MINE)/Smooth-Operators.ogg" id="4_1i2vb"]
 [ext_resource type="Texture2D" uid="uid://cn4e0rafnrpgc" path="res://menus/main/heist_monkey_mascott.png" id="6_0ee2e"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_ew2c6"]
@@ -80,6 +81,9 @@ text = "Settings"
 [node name="Quit" type="Button" parent="CanvasLayer/Control/HSplitContainer/VSplitContainer/CenterContainer2/VBoxContainer"]
 layout_mode = 2
 text = "Quit"
+
+[node name="MenuMusicCool" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_1i2vb")
 
 [connection signal="pressed" from="CanvasLayer/Control/HSplitContainer/VSplitContainer/CenterContainer2/VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/HSplitContainer/VSplitContainer/CenterContainer2/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
