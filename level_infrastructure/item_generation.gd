@@ -8,16 +8,16 @@ func spawn_loot_for_level(rooms: Array, loot_table: Array) -> Dictionary:
 	var num_loot_in_room = 0
 	
 	for room in rooms:
-		num_loot_in_room = RNG.randi()
+		num_loot_in_room = RNG.randi_range(0, 3)
 		for i in num_loot_in_room:
 			loot_scene = loot_table.pick_random()
 			
 			if loot_scene not in loot_to_spawn:
 				loot_to_spawn[loot_scene] = []
 				
-			var x_variance = (room.voxel_scale.x * room.size_in_voxels.x / 2) - 1
-			var y_variance = (room.voxel_scale.y * room.size_in_voxels.y / 2) - 1
-			var z_variance = (room.voxel_scale.y * room.size_in_voxels.y / 2) - 1
+			var x_variance = (room.voxel_scale.x * room.size_in_voxels.x / 2) - 0.1
+			var y_variance = (room.voxel_scale.y * room.size_in_voxels.y / 2) - 0.1
+			var z_variance = (room.voxel_scale.y * room.size_in_voxels.y / 2) - 0.1
 			
 			var loot_x = room.position.x + RNG.randf_range(-x_variance, x_variance)
 			var loot_y = room.position.y + RNG.randf_range(-y_variance, y_variance)

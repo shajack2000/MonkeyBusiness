@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cs8p18lvgu26u"]
 
 [ext_resource type="Texture2D" uid="uid://dfpvd8m0lpi2a" path="res://loot/banana/low_poly_banana_free_0.png" id="1_fhhcc"]
-[ext_resource type="PhysicsMaterial" path="res://items/grabbable_phys_mat.tres" id="1_vv8mf"]
+[ext_resource type="PhysicsMaterial" uid="uid://3o3pyauj55jl" path="res://items/grabbable_phys_mat.tres" id="1_vv8mf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vtmxs"]
 resource_name = "Scene_-_Root"
@@ -51,7 +51,7 @@ size = Vector3(0.314972, 0.156982, 0.0752716)
 
 [node name="Banana" type="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
-collision_layer = 513
+collision_layer = 520
 collision_mask = 513
 physics_material_override = ExtResource("1_vv8mf")
 

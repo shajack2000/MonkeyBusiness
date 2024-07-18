@@ -12,7 +12,7 @@ func _spawn_loot() -> void:
 	var rooms : Array = $DungeonGenerator3D.get_all_placed_and_preplaced_rooms()
 	var loot_spawnpoints : Dictionary = item_generator.spawn_loot_for_level(rooms, loot_table)
 	
-	for key in loot_spawnpoints.keys:
+	for key in loot_spawnpoints.keys():
 		for point_set in loot_spawnpoints[key]:
 			var loot_instance = key.instantiate()
 			loot_instance.position.x = point_set[0]

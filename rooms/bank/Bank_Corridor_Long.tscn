@@ -21,6 +21,7 @@ size_in_voxels = Vector3i(1, 1, 6)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 use_collision = true
+collision_mask = 15
 size = Vector3(10, 10, 60)
 
 [node name="RoomCut" type="CSGBox3D" parent="CSGBox3D"]

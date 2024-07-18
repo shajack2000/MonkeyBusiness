@@ -105,6 +105,7 @@ MarginContainer/constants/margin_top = 10
 
 [node name="Character" type="CharacterBody3D" node_paths=PackedStringArray("HEAD", "CAMERA", "CAMERA_ANIMATION", "COLLISION_MESH")]
 collision_layer = 2
+collision_mask = 7
 script = ExtResource("1_0t4e8")
 CROUCH = "crouch"
 SPRINT = "sprint"
